@@ -15,8 +15,6 @@ import {
 
 const Navbar = () => {
     const [isMobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-    const [isMenuOpen, setMenuOpen] = React.useState(false); // chỉ dùng cho mobile dropdown
-
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!isMobileMenuOpen);
     };
@@ -58,7 +56,7 @@ const Navbar = () => {
                             </NavigationMenuItem>
 
                             <NavigationMenuItem>
-                                <Link href="/owner-fields/add-field" legacyBehavior passHref>
+                                <Link href="/owner-fields/add-fields" legacyBehavior passHref>
                                     <NavigationMenuLink className="hover:text-black transition hover:font-bold">
                                         Trở thành chủ sân
                                     </NavigationMenuLink>
@@ -77,15 +75,19 @@ const Navbar = () => {
 
                 {/* Nút bên phải */}
                 <div className="hidden md:flex items-center space-x-2 z-10">
-                    <Button
-                        variant="outline"
-                        className="border-gray-300 text-gray-800 hover:bg-black hover:text-white transition"
-                    >
-                        Đăng nhập
-                    </Button>
-                    <Button className="bg-black text-white border border-transparent hover:bg-white hover:text-black hover:border-black transition">
-                        Đăng ký
-                    </Button>
+                    <Link href="/auth/LoginForm" className="cursor-pointer">
+                        <Button
+                            variant="outline"
+                            className="border-gray-300 text-gray-800 hover:bg-black hover:text-white transition cursor-pointer"
+                        >
+                            Đăng nhập
+                        </Button>
+                    </Link>
+                    <Link href="/auth/RegisterForm">
+                        <Button className="bg-black cursor-pointer text-white border border-transparent hover:bg-white hover:text-black hover:border-black transition">
+                            Đăng ký
+                        </Button>
+                    </Link>
                     <Link href={"/admin"}>
                         <Button className="bg-black text-white hover:bg-white hover:text-black hover:border-black transition">
                             Admin
@@ -119,47 +121,26 @@ const Navbar = () => {
                             Trở thành chủ sân
                         </a>
                     </Link>
-
-                    {/* Dropdown mobile - Về chúng tôi */}
-                    <div className="space-y-2">
-                        <button
-                            className="flex items-center justify-between w-full text-gray-800 hover:text-black transition"
-                            onClick={() => setMenuOpen(!isMenuOpen)}
-                        >
-                            <span>Về chúng tôi</span>
-                        </button>
-                        {isMenuOpen && (
-                            <div className="pl-4 space-y-2">
-                                <Link href="/gioithieu" passHref legacyBehavior>
-                                    <a className="block text-gray-600 hover:text-black">
-                                        Liên hệ
-                                    </a>
-                                </Link>
-                                <Link href="/gioithieu" passHref legacyBehavior>
-                                    <a className="block text-gray-600 hover:text-black">
-                                        Dịch vụ
-                                    </a>
-                                </Link>
-                                <Link href="/gioithieu" passHref legacyBehavior>
-                                    <a className="block text-gray-600 hover:text-black">
-                                        Giới thiệu
-                                    </a>
-                                </Link>
-                            </div>
-                        )}
-                    </div>
-
+                    <Link href="/about" passHref legacyBehavior>
+                        <a className="block text-gray-800 hover:text-black transition">
+                            Liên hệ
+                        </a>
+                    </Link>
                     {/* Đăng nhập / Đăng ký mobile */}
                     <div className="flex flex-col space-y-2 pt-4">
-                        <Button
-                            variant="outline"
-                            className="border-gray-300 text-gray-800 hover:bg-black hover:text-white transition"
-                        >
-                            Đăng nhập
-                        </Button>
-                        <Button className="bg-black text-white hover:bg-white hover:text-black hover:border-black transition">
-                            Đăng ký
-                        </Button>
+                        <Link href="/auth/LoginForm">
+                            <Button
+                                variant="outline"
+                                className="border-gray-300 cursor-pointer text-gray-800 hover:bg-black hover:text-white transition"
+                            >
+                                Đăng nhập
+                            </Button>
+                        </Link>
+                        <Link href="/auth/RegisterForm">
+                            <Button className="bg-black text-white border border-transparent hover:bg-white hover:text-black hover:border-black transition cursor-pointer">
+                                Đăng ký
+                            </Button>
+                        </Link>
                         <Button className="bg-black text-white hover:bg-white hover:text-black hover:border-black transition">
                             Admin
                         </Button>
