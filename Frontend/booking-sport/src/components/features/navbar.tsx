@@ -56,7 +56,7 @@ const Navbar = () => {
                             </NavigationMenuItem>
 
                             <NavigationMenuItem>
-                                <Link href="/owner-fields/add-fields" legacyBehavior passHref>
+                                <Link href="/owner-fields/add-field" legacyBehavior passHref>
                                     <NavigationMenuLink className="hover:text-black transition hover:font-bold">
                                         Trở thành chủ sân
                                     </NavigationMenuLink>
