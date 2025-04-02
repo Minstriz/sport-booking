@@ -4,8 +4,8 @@ import Navbar from "@/components/features/navbar";
 import Footer from "@/components/features/Footer";
 
 export const metadata: Metadata = {
-  title: "Đặt Sân Bóng Online",
-  description: "Hệ thống đặt sân bóng trực tuyến, nhanh chóng và tiện lợi",
+  title: "Đặt Sân Thể Thao Online",
+  description: "Hệ thống đặt sân thể thao trực tuyến, nhanh chóng và tiện lợi",
 };
 
 export default function RootLayout({
